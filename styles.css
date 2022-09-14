@@ -19,6 +19,7 @@ body {
 #question {
   height: 100px;
   display: flex;
+  padding: 4px;
   align-items: center;
   justify-content: center;
   color: white;
@@ -189,6 +190,10 @@ button {
   #histories {  
     grid-template-columns: repeat(1,1fr);
     gap: 16px;
+  }
+  #display{
+    padding: 0 0 4px 4px;
+    overflow: scroll;
   }
 }
 
