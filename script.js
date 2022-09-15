@@ -6,14 +6,14 @@ const resultModal = document.getElementById("result");
 const modalBackground = document.getElementById("modal-background");
 
 
-// Stop space scroll 
+// Stop space scroll in web page
 window.onkeydown = function (e) {
   return !(e.keyCode == 32);
 };
 
 // variables
 let userText = "";
-let errorCount = [];
+let errorCount = 0;
 let startTime;
 let questionText = "";
 
@@ -52,7 +52,7 @@ const typeController = (e) => {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
-    errorCount.push(newLetter);
+    errorCount++;
   }
 
   // check if given question text is equal to user typed text
@@ -94,19 +94,17 @@ const gameOver = () => {
   resultModal.innerHTML = `
     <h1>Finished!</h1>
     <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
-    <p>You made <span class="bold red">${errorCount.length}</span> mistakes</p>
+    <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
     <p>Your typing speed: <span class="bold speed">${speedCount}</span> wpm</p>
     </br>
     <button onclick="closeModal()">Close</button>
   `;
 
-  addHistory(questionText, timeTaken, errorCount.length, speedCount);
-
-
+  addHistory(questionText, timeTaken, errorCount, speedCount);
 
   // restart everything
   startTime = 0;
-  errorCount.length = 0;
+  errorCount = 0;
   userText = "";
   display.classList.add("inactive");
 };
