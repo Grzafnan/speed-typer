@@ -70,17 +70,10 @@ const gameOver = () => {
   const finishTime = new Date().getTime();
   const timeTaken = parseInt((finishTime - startTime) / 1000);
 
-
-
+  // speedCount calculation 
   const wordsArr = questionText.trim().split(" ")
-  // console.log(wordsArr.filter(word => word !== "").length);
   const wordCount = wordsArr.filter(word => word !== "").length;
   const speedCount = parseInt((wordCount / timeTaken) * 60);
-
-
-  // console.log(timeTaken);
-
-  // console.log((keyCount.length / 60) * timeTaken);
 
 
   // show result modal
