@@ -41,7 +41,7 @@ const typeController = (e) => {
   userText += newLetter;
 
   const newLetterCorrect = validate(newLetter);
-
+  // console.log(newLetterCorrect);
   if (newLetterCorrect) {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
@@ -70,6 +70,19 @@ const gameOver = () => {
   const finishTime = new Date().getTime();
   const timeTaken = parseInt((finishTime - startTime) / 1000);
 
+
+
+  const wordsArr = questionText.trim().split(" ")
+  // console.log(wordsArr.filter(word => word !== "").length);
+  const wordCount = wordsArr.filter(word => word !== "").length;
+  const speedCount = parseInt((wordCount / timeTaken) * 60);
+
+
+  // console.log(timeTaken);
+
+  // console.log((keyCount.length / 60) * timeTaken);
+
+
   // show result modal
   resultModal.innerHTML = "";
   resultModal.classList.toggle("hidden");
@@ -83,10 +96,14 @@ const gameOver = () => {
     <h1>Finished!</h1>
     <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
     <p>You made <span class="bold red">${errorCount.length}</span> mistakes</p>
+    <p>Your typing speed: <span class="bold speed">${speedCount}</span> wpm</p>
+    </br>
     <button onclick="closeModal()">Close</button>
   `;
 
-  addHistory(questionText, timeTaken, errorCount.length);
+  addHistory(questionText, timeTaken, errorCount.length, speedCount);
+
+
 
   // restart everything
   startTime = 0;
@@ -139,3 +156,5 @@ setInterval(() => {
 
   document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
 }, 1000);
+
+

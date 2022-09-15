@@ -46,6 +46,7 @@ body {
   background-color: #171717;
   border: 2px solid #9dffad;
   border-radius: 15px;
+  overflow: auto;
 }
 
 #countdown {
@@ -90,6 +91,10 @@ body {
 }
 .bold {
   font-weight: 700;
+}
+
+.speed{
+color: rgb(69, 230, 69);
 }
 .inactive {
   border: 2px solid white !important;
@@ -193,7 +198,6 @@ button {
   }
   #display{
     padding: 0 0 4px 4px;
-    overflow: scroll;
   }
 }
 
