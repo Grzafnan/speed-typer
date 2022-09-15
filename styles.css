@@ -154,6 +154,7 @@ button {
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   justify-content: space-around;
+  margin-bottom: 20px;
 }
 
 .card {
