@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog</title>
+    <style>
+      body{
+        font-family: monospace;
+      }
+    </style>
     <!-- cdn  -->
     <link
       rel="stylesheet"
@@ -13,7 +18,7 @@
   </head>
   <body>
     <main>
-      <h1 class="text-center text-4xl mt-10 px-4">Some Importance Questions and Answers</h1>
+      <h1 class="text-center font-extrabold text-4xl mt-10 px-4">Some Importance Questions and Answers</h1>
       <section class="container mx-auto mt-10 ">
         <div id="accordion-collapse" data-accordion="collapse">
           <h2 id="accordion-collapse-heading-1">
@@ -25,6 +30,7 @@
               aria-controls="accordion-collapse-body-1"
             >
               <span
+              class="font-bold"
                 >What's difference between local storage and session
                 storage?</span
               >
@@ -58,16 +64,16 @@
                   <thead
                     class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
                   >
-                    <tr>
-                      <th scope="col" class="py-3 px-6 text-center">
+                    <tr class="text-lg">
+                      <th scope="col" class="py-3  px-6 font-extrabold text-black text-center">
                         Local Storage
                       </th>
-                      <th scope="col" class="py-3 px-6 text-center">
+                      <th scope="col" class="py-3 px-6 font-extrabold text-black text-center">
                         Session Storage
                       </th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody class="text-black ">
                     <tr
                       class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
                     >
@@ -129,6 +135,7 @@
               aria-controls="accordion-collapse-body-2"
             >
               <span
+              class="font-bold"
                 >What's difference between global scope and block scope?</span
               >
               <svg
@@ -154,11 +161,11 @@
             <div
               class="p-5 font-light border border-b-0 border-gray-200 dark:border-gray-700"
             >
-              <p class="mb-2 text-gray-500 dark:text-gray-400">
+              <p class="mb-2 text-black dark:text-gray-400">
                 <h1 class="font-bold">Global Scope:</h1>
                 The variables defined outside of any function or curly brackets are known as global variables and have global scope. Global scope means that the variables can be accessed from any part of that program, any function or conditional state can access that variable.
               </p>
-              <p class="mb-2 text-gray-500 dark:text-gray-400">
+              <p class="mb-2 text-black dark:text-gray-400">
                 <h1 class="font-bold">Block Scope:</h1>
                 Block scope is also a sub-type of local scope. The block scope can be defined as the scope of the variables inside the curly brackets {}. Now, these curly brackets can be of loops, or conditional statements, or something else. You are only allowed to refer to these variables from within the curly brackets {}.
               </p>
@@ -173,6 +180,7 @@
               aria-controls="accordion-collapse-body-3"
             >
               <span
+              class="font-bold"
                 >How to works event loop in JavaScript?</span
               >
               <svg
@@ -198,7 +206,7 @@
             <div
               class="p-5 font-light border border-t-0 border-gray-200 dark:border-gray-700"
             >
-              <p class="mb-2 text-gray-500 dark:text-gray-400">
+              <p class="mb-2 text-black dark:text-gray-400">
                 The Event Loop has one simple job — to monitor the Call Stack and the Callback Queue. If the Call Stack is empty, it will take the first event from the queue and will push it to the Call Stack, which effectively runs it. Such an iteration is called a tick in the Event Loop. Each event is just a function callback.
               </p>
             </div>
@@ -212,6 +220,7 @@
               aria-controls="accordion-collapse-body-2"
             >
               <span
+              class="font-bold"
                 >Ways to get undefined in javascript.</span
               >
               <svg
@@ -237,7 +246,7 @@
             <div
               class="p-5 font-light border border-b-0 border-gray-200 dark:border-gray-700"
             >
-              <p class="mb-2 text-gray-500 dark:text-gray-400">
+              <p class="mb-2 text-black dark:text-gray-400">
                 1. Variable that is  not initialized will give
                 undefined.
               <br>
